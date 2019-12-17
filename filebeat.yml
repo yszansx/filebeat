@@ -19,8 +19,6 @@ processors:
 # elasticsearch output info
 output.elasticsearch:
   hosts: ['${ES_HOST:127.0.0.1}:${ES_PORT:9200}']
-  username: ${ES_USERNAME:elastic}
-  password: ${ES_PASS:changeme}
   # index: "${INDEX_NAME:filebeat}-%{[beat.version]}-%{+yyyy.MM.dd}"
   timeout: 180
   backoff.max: 120
@@ -28,9 +26,6 @@ output.elasticsearch:
 # kibanan setup
 setup.kibana:
   host: "${KIBANA_HOST:127.0.0.1}:${KIBANA_PORT:5601}"
-  username: "${ES_USERNAME:elastic}"
-  password: "${ES_PASS:changeme}"
-
 setup.template.enabled: true
 
 # if you change output.elasticsearch you have to change this two settings
@@ -47,6 +42,3 @@ setup.dashboards.retry.maximum: 20
 # enable modules
 filebeat.modules:
 - module: nginx
-- module: mysql
-- module: apache2
-- module: mongodb
