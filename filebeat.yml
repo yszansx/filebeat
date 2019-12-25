@@ -17,16 +17,22 @@ processors:
 - add_cloud_metadata:
 
 # elasticsearch output info
-output.elasticsearch:
-  hosts: ['${ES_HOST:127.0.0.1}:${ES_PORT:9200}']
-  # index: "${INDEX_NAME:filebeat}-%{[beat.version]}-%{+yyyy.MM.dd}"
-  timeout: 180
-  backoff.max: 120
-
+#output.elasticsearch:
+#  hosts: ['${ES_HOST:127.0.0.1}:${ES_PORT:9200}']
+  ## index: "${INDEX_NAME:filebeat}-%{[beat.version]}-%{+yyyy.MM.dd}"
+#  timeout: 180
+#  backoff.max: 120
+output.redis:
+  hosts: ["192.168.10.212:10021"]
+  #port: 6379
+  password: "2lb097mcQ23iESrB"  
+  db: 2
+  timeout: 60
+  key: "product_logsrv"
 # kibanan setup
-setup.kibana:
-  host: "${KIBANA_HOST:127.0.0.1}:${KIBANA_PORT:5601}"
-setup.template.enabled: true
+#setup.kibana:
+#  host: "${KIBANA_HOST:127.0.0.1}:${KIBANA_PORT:5601}"
+#setup.template.enabled: true
 
 # if you change output.elasticsearch you have to change this two settings
 # setup.template.name: "${INDEX_NAME:filebeat}"
