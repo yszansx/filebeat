@@ -8,14 +8,24 @@ filebeat.inputs:
   enabled: true
   paths:
     - ${INPUT_PATH:/volume/*.log}
+  fields:
+    log_topic: '${LOG_TOPIC:elib-gateway}'
+  
+  scan_frequency: 120s
 
-processors:
-- add_cloud_metadata:
+  exclude_lines: ['^$']
+  
+  multiline:
+    pattern: '^\d{4}-\d{1,2}-\d{1,2}\s\d{1,2}:\d{1,2}:\d{1,2}'
+    negate: true
+    match: after
+
+#processors:
+#- add_cloud_metadata:
 
 output.redis:
   enabled: true
   hosts: '${REDIS_HOSTS:192.168.10.212:10021}'
   password: '${REDIS_PASSWORD:2lb097mcQ23iESrB}'
-  data_type: '${REDIS_DATATYPE:list}'
   key: '${REDIS_KEY:product_logsrv}'
   db: '${REDIS_DB:2}'
