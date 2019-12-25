@@ -16,7 +16,6 @@ output.redis:
   enabled: true
   hosts: '${REDIS_HOSTS:192.168.10.212:10021}'
   password: '${REDIS_PASSWORD:2lb097mcQ23iESrB}'
+  data_type: '${REDIS_DATATYPE:list}'
   key: '${REDIS_KEY:product_logsrv}'
-# timeout: '${REDIS_TIMEOUT:60}'
   db: '${REDIS_DB:2}'
-
