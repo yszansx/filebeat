@@ -48,3 +48,9 @@ setup.dashboards.retry.maximum: 20
 # enable modules
 filebeat.modules:
 - module: nginx
+  access:
+    enabled: true
+    var.paths: ["${NGINX_ACCESS_PATH:/var/log/nginx/access.log}"]
+  error:
+    enabled: true
+    var.paths: ["${NGINX_ERROR_PATH:/var/log/nginx/error.log}"]
