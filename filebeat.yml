@@ -4,9 +4,9 @@ filebeat.config:
     reload.enabled: true
 
 filebeat.config.inputs:
-  reload.enabled: true
+  input_type: log
   path: ${path.config}/modules.d/*.yml
-
+  reload.enabled: true
 processors:
 - add_cloud_metadata: ~
 
