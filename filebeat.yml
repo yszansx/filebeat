@@ -8,7 +8,7 @@ filebeat.inputs:
   enabled: true
   paths:
     - ${INPUT_PATH:/volume/*.log}
-    - ${INPUT1_PATH:/volume/*.log}
+
 processors:
 - add_cloud_metadata:
 
