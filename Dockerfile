@@ -4,4 +4,5 @@ COPY modules.d /usr/share/filebeat/modules.d
 USER root
 VOLUME ["/volume"]
 RUN chmod 777 /volume && \
-chown root:filebeat /usr/share/filebeat/filebeat.yml
+chown root:filebeat /usr/share/filebeat/filebeat.yml && \
+/bin/cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo 'Asia/Shanghai' >/etc/timezone
