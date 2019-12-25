@@ -1,50 +1,23 @@
 filebeat.config:
-  prospectors:
-    path: ${path.config}/prospectors.d/*.yml
-    reload.enabled: true
   modules:
     path: ${path.config}/modules.d/*.yml
     reload.enabled: true
 
-# config file input
 filebeat.inputs:
 - type: log
   enabled: true
   paths:
     - ${INPUT_PATH:/volume/*.log}
 
-#processors:
-#- add_cloud_metadata:
+processors:
+- add_cloud_metadata: ~
 
-# elasticsearch output info
-#output.elasticsearch:
-#  hosts: ['${ES_HOST:127.0.0.1}:${ES_PORT:9200}']
-  ## index: "${INDEX_NAME:filebeat}-%{[beat.version]}-%{+yyyy.MM.dd}"
-#  timeout: 180
-#  backoff.max: 120
 output.redis:
-  hosts: ["192.168.10.212:10021"]
-  #port: 6379
-  password: "2lb097mcQ23iESrB"  
-  db: 2
-  timeout: 60
-  key: "product_logsrv"
-# kibanan setup
-#setup.kibana:
-#  host: "${KIBANA_HOST:127.0.0.1}:${KIBANA_PORT:5601}"
-#setup.template.enabled: true
-
-# if you change output.elasticsearch you have to change this two settings
-# setup.template.name: "${INDEX_NAME:filebeat}"
-# setup.template.pattern: "${INDEX_NAME:filebeat}-*"
-
-# enable dashboards
-setup.dashboards.enabled: true
-# setup.dashboards.index: "${INDEX_NAME:filebeat}-*"
-setup.dashboards.retry.enabled: true
-setup.dashboards.retry.interval: 3
-setup.dashboards.retry.maximum: 20
-
-# enable modules
+  enabled: true
+  hosts: '${REDIS_HOSTS:192.168.10.212:10021}'
+  password: '${REDIS_PASSWORD:2lb097mcQ23iESrB}'
+  key: '${REDIS_KEY:product_logsrv}'
+  timeout: '${REDIS_TIMEOUT:60}'
+  db: '${REDIS_DB:2}'
 filebeat.modules:
 - module: nginx
