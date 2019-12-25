@@ -11,7 +11,7 @@ filebeat.inputs:
   fields:
     log_topic: '${LOG_TOPIC:elib-gateway}'
   
-  scan_frequency: 120s
+  scan_frequency: 5s
 
   exclude_lines: ['^$']
   
