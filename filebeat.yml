@@ -22,7 +22,7 @@ filebeat.inputs:
 
 processors:
   - drop_fields:    
-      fields: ["ecs","input","agent","input"]
+      fields: ["ecs","input","agent","log.offset"]
 
 output.redis:
   enabled: true
