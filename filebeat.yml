@@ -21,9 +21,9 @@ filebeat.inputs:
     negate: true
     match: after
 
-#processors:
-#  - drop_fields:    
-#      fields: ["ecs","input","agent","log.offset"]
+processors:
+- drop_fields:    
+    fields: ["ecs","input","agent","log.offset"]
 
 output.redis:
   enabled: true
