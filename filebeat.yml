@@ -23,7 +23,7 @@ filebeat.inputs:
   multiline:
     pattern: '^.+(- -) \d{4}(-\d\d){2} \d\d:\d\d:\d\d'
     negate: true
-    what: "previous"
+    match: after
     
 processors:
   - drop_fields:    
