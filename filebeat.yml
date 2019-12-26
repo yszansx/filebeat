@@ -14,7 +14,7 @@ filebeat.inputs:
   scan_frequency: 10s
   tail_files: true
   exclude_lines: ['^$']
-  topic: '${[fields][log_topics]}'
+  topic: '${[log_topics]}'
   
   multiline:
     pattern: '^\d{4}-\d{1,2}-\d{1,2}\s\d{1,2}:\d{1,2}:\d{1,2}'
