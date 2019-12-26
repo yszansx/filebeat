@@ -14,6 +14,9 @@ filebeat.inputs:
   scan_frequency: 10s
   tail_files: true
   exclude_lines: ['^$']
+  
+  json.keys_under_root: true
+  json.overwrite_keys: true
     
   multiline:
     pattern: '^\d{4}-\d{1,2}-\d{1,2}\s\d{1,2}:\d{1,2}:\d{1,2}'
