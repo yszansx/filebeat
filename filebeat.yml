@@ -22,8 +22,8 @@ filebeat.inputs:
     match: after
 
 processors:
-- drop_fields:
-    fields: ["beat.hostname", "beat.name", "beat.version", "input_type", "beat"]
+  - drop_fields:    
+      fields: ["beat.hostname","beat.version","beat.name","prospector.type","input.type"]
 
 output.redis:
   enabled: true
