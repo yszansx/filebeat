@@ -21,8 +21,9 @@ filebeat.inputs:
     negate: true
     match: after
 
-#processors:
-#- add_cloud_metadata:
+processors:
+- drop_fields:
+    fields: ["input_type", "beat", "offset", "source"]
 
 output.redis:
   enabled: true
