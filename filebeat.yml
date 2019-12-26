@@ -23,7 +23,7 @@ filebeat.inputs:
 
 processors:
 - drop_fields:
-    fields: ["input_type", "beat", "offset", "source"]
+    fields: ["input_type", "beat", "offset", "source","metadata"]
 
 output.redis:
   enabled: true
