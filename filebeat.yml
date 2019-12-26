@@ -9,11 +9,12 @@ filebeat.inputs:
   paths:
     - ${INPUT_PATH:/volume/*.log}
   fields:
-    log_topic: '${LOG_TOPIC:elib-gateway}'
+    log_topics: '${LOG_TOPIC:elib-gateway}'
   
   scan_frequency: 10s
   tail_files: true
   exclude_lines: ['^$']
+  topic: '%{[fields][log_topics]}'
   
   multiline:
     pattern: '^\d{4}-\d{1,2}-\d{1,2}\s\d{1,2}:\d{1,2}:\d{1,2}'
