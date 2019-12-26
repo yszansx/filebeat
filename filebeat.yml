@@ -23,7 +23,7 @@ filebeat.inputs:
 
 processors:
   - drop_fields:    
-      fields: ["beat.hostname","beat.version","beat.name","prospector.type","input.type"]
+      fields: ["ecs","input"]
 
 output.redis:
   enabled: true
