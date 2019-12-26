@@ -29,4 +29,4 @@ output.redis:
   hosts: '${REDIS_HOSTS:192.168.10.212:10021}'
   password: '${REDIS_PASSWORD:2lb097mcQ23iESrB}'
   key: '${REDIS_KEY:product_logsrv}'
-  db: '${REDIS_DB:0}'
+  db: '${REDIS_DB:1}'
