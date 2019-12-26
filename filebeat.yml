@@ -4,11 +4,12 @@ filebeat.config:
     reload.enabled: true
 
 filebeat.inputs:
-- type: json
+- type: log
   enabled: true
   paths:
     - ${INPUT_PATH:/volume/*.log}
   json.keys_under_root: true
+  json.add_error_key: true
   json.overwrite_keys: true
   
   fields:
