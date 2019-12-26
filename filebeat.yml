@@ -8,10 +8,7 @@ filebeat.inputs:
   enabled: true
   paths:
     - ${INPUT_PATH:/volume/*.log}
-  json.keys_under_root: true
-  json.add_error_key: true
-  json.overwrite_keys: true
-  
+
   fields:
     log_topics: '${LOG_TOPIC:elib-gateway}'
   tags: '${TAGS:elib-gateway}'
