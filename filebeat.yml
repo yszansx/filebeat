@@ -5,7 +5,7 @@ filebeat.config:
 
 filebeat.inputs:
 - type: log
-  enabled: true
+  enabled: false
   paths:
     - ${INPUT_PATH:/volume/*.log}
 
