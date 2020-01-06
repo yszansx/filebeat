@@ -16,10 +16,10 @@ filebeat.inputs:
   tail_files: true
   exclude_lines: ['^$']
     
-#  multiline:
-#    pattern: '^\d{4}-\d{1,2}-\d{1,2}\s\d{1,2}:\d{1,2}:\d{1,2}'
-#    negate: true
-#    match: after
+  multiline:
+    pattern: '^\d{4}-\d{1,2}-\d{1,2}\s\d{1,2}:\d{1,2}:\d{1,2}'
+    negate: true
+    match: after
 
 processors:
 - drop_fields:    
