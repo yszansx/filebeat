@@ -11,7 +11,7 @@ filebeat.inputs:
 
   fields:
     log_topics: '${LOG_TOPIC:elib-gateway}'
-  tags: '${TAGS:elib-gateway}'
+#  tags: '${TAGS:elib-gateway}'
   scan_frequency: 10s
   tail_files: true
   exclude_lines: ['^$']
