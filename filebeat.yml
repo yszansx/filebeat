@@ -13,14 +13,14 @@ filebeat.inputs:
     log_topics: '${LOG_TOPIC:elib-gateway}'
 #  tags: '${TAGS:elib-gateway}'
   scan_frequency: 10s
-  tail_files: ture
+  tail_files: false
   exclude_lines: ['^$']
     
   multiline:
     pattern: '^\['
     negate: true
     match: after
-
+    timeout: 5s
 
 processors:
 - drop_fields:    
