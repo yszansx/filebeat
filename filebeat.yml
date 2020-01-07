@@ -1,7 +1,7 @@
 filebeat.config:
   modules:
     path: ${path.config}/modules.d/*.yml
-    reload.enabled: true
+    reload.enabled: false
 
 filebeat.inputs:
 - type: log
@@ -31,4 +31,5 @@ output.redis:
   password: '${REDIS_PASSWORD:hdfissufoiusn2378}'
   key: '${REDIS_KEY:product_logsrv}'
   db: '${REDIS_DB:1}'
-max_procs: 1
+max_procs: '${MAX_PROCS:1}'
+logging.level: '${LOG_LEVEL:error}'
