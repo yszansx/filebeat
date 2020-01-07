@@ -32,4 +32,4 @@ output.redis:
   key: '${REDIS_KEY:product_logsrv}'
   db: '${REDIS_DB:1}'
 max_procs: '${MAX_PROCS:1}'
-logging.level: '${LOG_LEVEL:error}'
+logging.level: '${LOG_LEVEL:warning}'
