@@ -28,9 +28,9 @@ processors:
 
 output.redis:
   enabled: true
-  hosts: '${REDIS_HOSTS:192.168.10.212:10021}'
+  hosts: '${REDIS_HOSTS:192.168.10.158:6379}'
   password: '${REDIS_PASSWORD:hdfissufoiusn2378}'
   key: '${REDIS_KEY:product_logsrv}'
-  db: '${REDIS_DB:1}'
+  db: '${REDIS_DB:2}'
 
 logging.level: warning
