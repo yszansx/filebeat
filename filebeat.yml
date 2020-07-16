@@ -28,8 +28,8 @@ processors:
 
 output.redis:
   enabled: true
-  hosts: '${REDIS_HOSTS:192.168.10.158:6379}'
-  password: '${REDIS_PASSWORD:sdfsdfs}'
+  hosts: '${REDIS_HOSTS:10.21.25.100:6380}'
+  password: '${REDIS_PASSWORD:c8887d93}'
   key: '${REDIS_KEY:product_logsrv}'
   db: '${REDIS_DB:2}'
 
