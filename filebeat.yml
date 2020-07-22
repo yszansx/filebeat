@@ -32,5 +32,5 @@ output.redis:
   password: '${REDIS_PASSWORD:c8887d293}'
   key: '${REDIS_KEY:product_logsrv}'
   db: '${REDIS_DB:2}'
-
+  timeout: 60
 logging.level: warning
